@@ -10,16 +10,17 @@ public class CS_Movement : MonoBehaviour
     //private
 
     private Vector2 _currentDirection;
+    private bool _canMove;
 
     //public
 
     public float MovementSpeed => _movementSpeed;
 
-    public void RegisterMove(Vector2 direction)
+    public void RegisterMove(Vector2 direction, float factor = 1f)
     {
         if (direction.magnitude > 1f) direction = direction.normalized;
 
-        _currentDirection = direction;
+        _currentDirection = direction * factor;
     }
 
     private void FixedUpdate()
