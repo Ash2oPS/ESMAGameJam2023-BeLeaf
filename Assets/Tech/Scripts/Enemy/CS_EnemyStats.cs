@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CS_EnemyStats : MonoBehaviour
 {
-    [SerializeField] public float _enemyHP;
-    [SerializeField] public float _enemyMovementSpeed;
-    [SerializeField] public float _enemyDamage;
+    [SerializeField] private float _enemyHP;
+    [SerializeField] private float _enemyDamage;
+
+    public float EnemyHP => _enemyHP;
+    public float EnemyDamage => _enemyDamage;
 }

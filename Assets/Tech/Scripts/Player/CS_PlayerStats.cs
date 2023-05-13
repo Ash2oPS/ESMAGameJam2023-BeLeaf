@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CS_PlayerStats : MonoBehaviour
 {
-    [SerializeField] public float _playerHP;
+    [SerializeField] private float _playerHP;
+    public float PlayerHP => _playerHP;
 
     public void SetHP(float _newHP)
     {
@@ -14,5 +15,6 @@ public class CS_PlayerStats : MonoBehaviour
         {
             Debug.Log("Joueur Dead");
         }
+        
     }
 }

@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8092451546302007458, guid: 26ef079f399a3434383ba565d10e3324, type: 3}
       propertyPath: _movementSpeed
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8092451546302007469, guid: 26ef079f399a3434383ba565d10e3324, type: 3}
       propertyPath: m_RootOrder
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chasePlayer: {fileID: 236708447}
+  _attackPlayer: {fileID: 236708452}
 --- !u!114 &236708452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,6 +159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 429f86e853960444796f7c56e512ad32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerStats: {fileID: 0}
+  _enemyStats: {fileID: 6032046274449053834}
 --- !u!114 &6032046274449053834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0596cb796cf2764e910f912e6215438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyHP: 0
+  _enemyDamage: 1
 --- !u!114 &3526748089351439802 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8092451546302007458, guid: 26ef079f399a3434383ba565d10e3324, type: 3}
