@@ -8,10 +8,7 @@ public class CS_HealthBar : MonoBehaviour
 {
     [Header("---References---")]
     [SerializeField] private Slider _slider;
-
-    [Header("---Data---")]
-    [SerializeField] private float _coeffJauge;
-  
+    
     //private 
     
     //getters
