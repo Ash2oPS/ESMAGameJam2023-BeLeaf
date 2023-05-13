@@ -8,10 +8,11 @@ public class CS_Shotgun : MonoBehaviour
 
     [Header("---Parameters---")]
     [Header("Shoot")]
-    [SerializeField] private int _numberOfSpawnedBullet;
+    [Range(1, 30)][SerializeField] private int _numberOfSpawnedBullet;
 
     [SerializeField] private float _shootDelay;
-    [Range(0f, 1f)][SerializeField] private float _spreadRangeWidth, _spreadRangeHeight;
+    [SerializeField] private float _spreadRangeWidth, _spreadRangeHeight;
+    [SerializeField] private float _rangeRandomFactor;
 
     [Header("Bullets")]
     [SerializeField] private float _bulletSpeed;
@@ -32,8 +33,7 @@ public class CS_Shotgun : MonoBehaviour
 
     [SerializeField] private CS_PlayerController _playerController;
     [SerializeField] private CS_Movement _movement;
-    [SerializeField] private CS_SoundManager _soundManager;
-    private AudioSource _audioSource;
+    [SerializeField] private List<CS_Bullet> _pullableBullets;
 
     [Header("---Prefabs---")]
     [SerializeField] private CS_Bullet _bulletPrefab;
@@ -50,7 +50,6 @@ public class CS_Shotgun : MonoBehaviour
     private void Awake()
     {
         _mouseManager = FindObjectOfType<CS_MouseManager>();
-        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -66,7 +65,6 @@ public class CS_Shotgun : MonoBehaviour
     {
         Vector3 dir = (_mouseManager.WorldPosition - _playerController.transform.position);
         _currentDirection = new Vector2(dir.x, dir.y).normalized;
-        //Debug.Log(_mouseManager.WorldPosition);
     }
 
     private void PivotRotation()
@@ -110,18 +108,23 @@ public class CS_Shotgun : MonoBehaviour
 
         for (int i = 0; i < _numberOfSpawnedBullet; i++)
         {
-            //            newDir = new Vector2(_currentDirection.x * factor, _currentDirection.y * factor).normalized;
-            SpawnBullet(_currentDirection, _bulletSpeed, _bulletLifeTime, _bulletVelocityCurve);
+            var angle = Vector2.SignedAngle(_currentDirection, Vector2.right);
+            angle += ((float)i - (float)_numberOfSpawnedBullet / 2f) * _spreadRangeWidth / (float)_numberOfSpawnedBullet;
+            angle += Random.Range(-1f, 1f) * _rangeRandomFactor;
+            newDir = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(-angle * Mathf.Deg2Rad));
+
+            float lifeTime = Random.Range(0.6f, 1f) * _bulletLifeTime;
+            float speed = Random.Range(0.6f, 1f) * _bulletSpeed;
+
+            SpawnBullet(i, newDir, speed, lifeTime, _bulletVelocityCurve);
         }
 
         Recoil();
-        _soundManager.PlaySound(_audioSource);
     }
 
-    private void SpawnBullet(Vector2 direction, float speed, float lifeTime, AnimationCurve velocityCurve)
+    private void SpawnBullet(int index, Vector2 direction, float speed, float lifeTime, AnimationCurve velocityCurve)
     {
-        CS_Bullet bullet = Instantiate(_bulletPrefab, _bulletSpawn.position, Quaternion.identity);
-        bullet.OnCreated(direction, speed, lifeTime, velocityCurve);
+        _pullableBullets[index].OnCreated(_bulletSpawn.position, direction, speed, lifeTime, velocityCurve);
     }
 
     #endregion Shoot
@@ -139,8 +142,6 @@ public class CS_Shotgun : MonoBehaviour
         float recoilTimer = 0f;
         float factor;
 
-        Debug.Log(dir);
-
         while (recoilTimer < _recoilDuration)
         {
             factor = _recoilCurve.Evaluate(recoilTimer / _recoilDuration);
@@ -153,4 +154,18 @@ public class CS_Shotgun : MonoBehaviour
     }
 
     #endregion Recoil
+
+    #region PullableBullets
+
+    public void ClearPullableBullets()
+    {
+        _pullableBullets.Clear();
+    }
+
+    public void AddPullableBullet(CS_Bullet bullet)
+    {
+        _pullableBullets.Add(bullet);
+    }
+
+    #endregion PullableBullets
 }
