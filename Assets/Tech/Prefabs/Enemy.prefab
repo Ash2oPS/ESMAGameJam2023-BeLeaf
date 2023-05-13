@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8092451546302007458, guid: 26ef079f399a3434383ba565d10e3324, type: 3}
+      propertyPath: _movementSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8092451546302007469, guid: 26ef079f399a3434383ba565d10e3324, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -57,3 +61,53 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26ef079f399a3434383ba565d10e3324, type: 3}
+--- !u!212 &3526748089304086589 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8092451546348991781, guid: 26ef079f399a3434383ba565d10e3324, type: 3}
+  m_PrefabInstance: {fileID: 4665640694234271000}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3526748089351439800 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8092451546302007456, guid: 26ef079f399a3434383ba565d10e3324, type: 3}
+  m_PrefabInstance: {fileID: 4665640694234271000}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &236708447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3526748089351439800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a85fef37dd87947b8c3cce65528827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 0}
+  _movement: {fileID: 3526748089351439802}
+  _sprite: {fileID: 3526748089304086589}
+--- !u!114 &236708448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3526748089351439800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70f6791136b6e5c41b3abc392f509fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movement: {fileID: 3526748089351439802}
+  _chasePlayer: {fileID: 236708447}
+--- !u!114 &3526748089351439802 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8092451546302007458, guid: 26ef079f399a3434383ba565d10e3324, type: 3}
+  m_PrefabInstance: {fileID: 4665640694234271000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3526748089351439800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52e4a326979ab1446b1fbf2a50da7bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
