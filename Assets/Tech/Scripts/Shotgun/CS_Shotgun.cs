@@ -43,6 +43,7 @@ public class CS_Shotgun : MonoBehaviour
     private float _timer;
     private bool _canShoot => _timer == 0f;
     private CS_MouseManager _mouseManager;
+    private CS_CamManager _camManager;
     private Vector2 _currentDirection;
 
     #endregion Variables & Attributes
@@ -50,6 +51,7 @@ public class CS_Shotgun : MonoBehaviour
     private void Awake()
     {
         _mouseManager = FindObjectOfType<CS_MouseManager>();
+        _camManager = FindObjectOfType<CS_CamManager>();
     }
 
     private void Update()
@@ -120,6 +122,7 @@ public class CS_Shotgun : MonoBehaviour
         }
 
         Recoil();
+        _camManager.Shake();
     }
 
     private void SpawnBullet(int index, Vector2 direction, float speed, float lifeTime, AnimationCurve velocityCurve)
