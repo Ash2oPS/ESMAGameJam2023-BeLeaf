@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class CS_Bullet : MonoBehaviour
 {
@@ -11,12 +12,20 @@ public class CS_Bullet : MonoBehaviour
 
     private float _timer;
 
-    public void OnCreated(Vector2 direction, float speed, float lifeTime, AnimationCurve velocityCurve)
+    private bool _isActive = false;
+
+    public void OnCreated(Vector2 position, Vector2 direction, float speed, float lifeTime, AnimationCurve velocityCurve)
     {
+        _isActive = true;
+
+        transform.position = position;
+
         _direction = direction;
         _speed = speed;
         _lifeTime = lifeTime;
         _velocityCurve = velocityCurve;
+
+        _timer = 0;
     }
 
     public void Update()
@@ -28,6 +37,8 @@ public class CS_Bullet : MonoBehaviour
 
     public void FixedUpdate()
     {
+        if (!_isActive) return;
+
         Vector3 pos = new Vector3(_direction.x, _direction.y, 0f);
 
         float factor = _velocityCurve.Evaluate(_timer / _lifeTime);
@@ -42,9 +53,12 @@ public class CS_Bullet : MonoBehaviour
 
     private void TryToDestroy()
     {
-        if (_timer == _lifeTime)
-        {
-            Destroy(gameObject);
-        }
+        if (_timer == _lifeTime) Disable();
+    }
+
+    private void Disable()
+    {
+        _isActive = false;
+        transform.position = new Vector3(100f, 100f, 0f);
     }
 }

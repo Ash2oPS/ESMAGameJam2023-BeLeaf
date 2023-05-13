@@ -177,11 +177,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e111f9ece02cae4d9182c1850337acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _numberOfSpawnedBullet: 6
-  _shootDelay: 1.5
-  _spreadRangeWidth: 1
+  _numberOfSpawnedBullet: 10
+  _shootDelay: 0.85
+  _spreadRangeWidth: 100
   _spreadRangeHeight: 0
-  _bulletSpeed: 35
+  _rangeRandomFactor: 10
+  _bulletSpeed: 30
   _bulletLifeTime: 0.25
   _bulletVelocityCurve:
     serializedVersion: 2
@@ -189,29 +190,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 0.33453447
-      outSlope: 0.33453447
+      inSlope: -1.4590399
+      outSlope: -1.4590399
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.34926468
-    - serializedVersion: 3
-      time: 0.379771
-      value: 1.0974032
-      inSlope: -0.05628984
-      outSlope: -0.1543966
-      tangentMode: 1
-      weightedMode: 2
-      inWeight: 0.098105215
-      outWeight: 0.47692308
+      outWeight: 0.15648855
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -1.2952306
-      outSlope: -1.2952306
+      inSlope: -0.6071769
+      outSlope: -0.6071769
       tangentMode: 0
       weightedMode: 1
-      inWeight: 0.4738462
+      inWeight: 0.490458
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -222,30 +214,31 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: 0.021056416
-      outSlope: 0.021056416
+      inSlope: -0.803579
+      outSlope: -0.803579
       tangentMode: 0
       weightedMode: 3
       inWeight: 0
-      outWeight: 1
+      outWeight: 0.4255725
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -9.117813
-      outSlope: -9.117813
+      inSlope: -0.25534073
+      outSlope: -0.25534073
       tangentMode: 0
       weightedMode: 3
-      inWeight: 0.030534327
+      inWeight: 0.46183205
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _recoilPower: 5
+  _recoilPower: 3
   _recoilDuration: 0.2
   _pivot: {fileID: 438066624463100923}
   _bulletSpawn: {fileID: 109300400483790888}
   _playerController: {fileID: 8662482835942500254}
   _movement: {fileID: 6881967538978589453}
+  _pullableBullets: []
   _bulletPrefab: {fileID: 1017962006994323900, guid: 5473528115a02bb4880e8f9fc19a7ffb, type: 3}
 --- !u!114 &5612482664717505558
 MonoBehaviour:
