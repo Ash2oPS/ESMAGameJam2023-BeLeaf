@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CS_GameManager : MonoBehaviour
 {
-    private bool _partTwoBegin = false;
+    public bool PartTwoBegin = false;
     
     public void TriggerEndGame()
     {
@@ -14,6 +15,6 @@ public class CS_GameManager : MonoBehaviour
 
     public void TriggerPartTwo()
     {
-        _partTwoBegin = true;
+        PartTwoBegin = true;
     }
 }
