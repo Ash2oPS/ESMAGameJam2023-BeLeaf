@@ -18,13 +18,13 @@ public class CS_ChasePlayer : MonoBehaviour
             if (_direction.x < 0)
             {
                 _sprite.flipX = true;
-                Debug.Log("JE VAIS A GAUCHE");
+                //Debug.Log("JE VAIS A GAUCHE");
             }
 
             else
             {
                 _sprite.flipX = false;
-                Debug.Log("JE VAIS A DROITE");
+                //Debug.Log("JE VAIS A DROITE");
 
             }
             
