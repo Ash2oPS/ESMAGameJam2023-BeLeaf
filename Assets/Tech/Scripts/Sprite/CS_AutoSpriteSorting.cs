@@ -10,6 +10,8 @@ public class CS_AutoSpriteSorting : MonoBehaviour
     private void Start()
     {
         StartCoroutine(AutoSorting());
+
+        _spriteRenderer.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
     }
 
     private IEnumerator AutoSorting()
