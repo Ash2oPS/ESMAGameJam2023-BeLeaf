@@ -7,18 +7,17 @@ public class CS_EnemyController : MonoBehaviour
 {
     [SerializeField] private CS_ChasePlayer _chasePlayer;
     [SerializeField] private CS_AttackPlayer _attackPlayer;
-
-    private void Start()
-    {
-        
-    }
-
-    private void Update()
-    {
-    }
+    [SerializeField] private CS_EnemyMovement _enemyMovement;
 
     private void FixedUpdate()
     {
         _chasePlayer.MoveToPlayer();
+    }
+
+    public void Explode()
+    {
+        _enemyMovement.StopBouncing();
+
+        Destroy(gameObject);
     }
 }

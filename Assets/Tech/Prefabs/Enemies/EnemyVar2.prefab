@@ -1,23 +1,39 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2029825619781851820
+--- !u!1001 &3532949544210711909
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3000717347187386832, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
+      propertyPath: _bounceHeight
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000717347187386832, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
+      propertyPath: _movementSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000717347187386832, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
+      propertyPath: _bounceDuration
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3000717347187386832, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
+      propertyPath: _delayBeforeBounce
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3526748089304086589, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 703cb5dcdbc49014b91a2145cb0e1a61, type: 3}
+      objectReference: {fileID: 21300000, guid: 2a5d6c3ea2490b841b19592a3e545fa7, type: 3}
     - target: {fileID: 3526748089351439797, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3526748089351439797, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.574
+      value: -1.878
       objectReference: {fileID: 0}
     - target: {fileID: 3526748089351439797, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -57,15 +73,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3526748089351439800, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
       propertyPath: m_Name
-      value: EnemyVar3
+      value: EnemyVar2
       objectReference: {fileID: 0}
     - target: {fileID: 3526748089351439802, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
       propertyPath: _movementSpeed
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6032046274449053834, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
       propertyPath: _enemyDamage
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9179746701842865345, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
       propertyPath: m_IsTrigger
