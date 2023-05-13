@@ -19,7 +19,7 @@ public class CS_AutoSpriteSorting : MonoBehaviour
         while (true)
         {
             Sorting();
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
     }
 

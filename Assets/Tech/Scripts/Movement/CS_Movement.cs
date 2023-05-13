@@ -17,6 +17,8 @@ public class CS_Movement : MonoBehaviour
 
     public void RegisterMove(Vector2 direction)
     {
+        if (direction.magnitude > 1f) direction = direction.normalized;
+
         _currentDirection = direction;
     }
 

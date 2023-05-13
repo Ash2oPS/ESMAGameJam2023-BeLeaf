@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Shadows
+    uniqueID: 245767115
+    locked: 0
+  - name: Characters
+    uniqueID: 807269517
+    locked: 0
