@@ -32,6 +32,8 @@ public class CS_Shotgun : MonoBehaviour
 
     [SerializeField] private CS_PlayerController _playerController;
     [SerializeField] private CS_Movement _movement;
+    [SerializeField] private CS_SoundManager _soundManager;
+    private AudioSource _audioSource;
 
     [Header("---Prefabs---")]
     [SerializeField] private CS_Bullet _bulletPrefab;
@@ -48,6 +50,7 @@ public class CS_Shotgun : MonoBehaviour
     private void Awake()
     {
         _mouseManager = FindObjectOfType<CS_MouseManager>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -112,6 +115,7 @@ public class CS_Shotgun : MonoBehaviour
         }
 
         Recoil();
+        _soundManager.PlaySound(_audioSource);
     }
 
     private void SpawnBullet(Vector2 direction, float speed, float lifeTime, AnimationCurve velocityCurve)
