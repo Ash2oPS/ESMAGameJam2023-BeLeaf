@@ -5,12 +5,12 @@ using UnityEngine;
 public class CS_Movement : MonoBehaviour
 {
     [Header("---Parameters---")]
-    [SerializeField] private float _movementSpeed;
+    [SerializeField] protected float _movementSpeed;
 
     //private
 
-    private Vector2 _currentDirection;
-    private bool _canMove;
+    protected Vector2 _currentDirection;
+    protected bool _canMove;
 
     //public
 
@@ -24,6 +24,11 @@ public class CS_Movement : MonoBehaviour
     }
 
     private void FixedUpdate()
+    {
+        Move();
+    }
+
+    protected virtual void Move()
     {
         if (_currentDirection == Vector2.zero) return;
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class CS_ShotgunSpriteFlip : MonoBehaviour
 {
     [SerializeField] private Transform _shotgun;
+    [SerializeField] private SpriteRenderer _playerSpriteRenderer;
 
     private float angle;
     private bool _isFlipped;
@@ -28,6 +29,7 @@ public class CS_ShotgunSpriteFlip : MonoBehaviour
     {
         float scaleY = value ? -1f : 1f;
         _shotgun.localScale = new Vector3(1f, scaleY, 1f);
+        _playerSpriteRenderer.flipX = value;
 
         _isFlipped = value;
     }

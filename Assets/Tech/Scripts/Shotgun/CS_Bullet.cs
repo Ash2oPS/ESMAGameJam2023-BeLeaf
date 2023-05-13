@@ -14,6 +14,8 @@ public class CS_Bullet : MonoBehaviour
 
     private bool _isActive = false;
 
+    #region Movement
+
     public void OnCreated(Vector2 position, Vector2 direction, float speed, float lifeTime, AnimationCurve velocityCurve)
     {
         _isActive = true;
@@ -53,12 +55,28 @@ public class CS_Bullet : MonoBehaviour
 
     private void TryToDestroy()
     {
-        if (_timer == _lifeTime) Disable();
+        if (!_isActive) return;
+
+        if (_timer == _lifeTime)
+        {
+            Disable();
+        }
     }
 
     private void Disable()
     {
         _isActive = false;
         transform.position = new Vector3(100f, 100f, 0f);
+    }
+
+    #endregion Movement
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.TryGetComponent<CS_EnemyController>(out CS_EnemyController enemy)) return;
+
+        enemy.Explode();
+
+        Disable();
     }
 }

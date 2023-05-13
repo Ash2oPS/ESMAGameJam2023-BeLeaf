@@ -67,7 +67,8 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 18413f4066d088e488d7133625538133, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8092451546302007458, guid: 26ef079f399a3434383ba565d10e3324, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 26ef079f399a3434383ba565d10e3324, type: 3}
 --- !u!212 &3526748089304086589 stripped
 SpriteRenderer:
@@ -112,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8a85fef37dd87947b8c3cce65528827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movement: {fileID: 3526748089351439802}
+  _movement: {fileID: 3000717347187386832}
   _sprite: {fileID: 3526748089304086589}
 --- !u!114 &236708448
 MonoBehaviour:
@@ -128,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chasePlayer: {fileID: 236708447}
   _attackPlayer: {fileID: 236708452}
+  _enemyMovement: {fileID: 3000717347187386832}
 --- !u!114 &236708452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +143,122 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyStats: {fileID: 6032046274449053834}
+--- !u!114 &3000717347187386832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3526748089351439800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d446aa0a5990ce40a3cd18ef9373bc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementSpeed: 4
+  _bounceHeight: 0.4
+  _delayBeforeBounce: 0.2
+  _bounceDuration: 0.4
+  _bounceCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 73.73899
+      outSlope: 73.73899
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.011450382
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: -0.02459407
+      outSlope: -0.02459407
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.76717556
+      outWeight: 0.73664117
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -55.304398
+      outSlope: -55.304398
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.015267134
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _yScaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.9236147
+      outSlope: 0.9236147
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.14503781
+    - serializedVersion: 3
+      time: 0.7
+      value: 1.1
+      inSlope: 0.0014091888
+      outSlope: 0.0014091888
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.44407362
+      outWeight: 0.4246632
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -4.3780847
+      outSlope: -4.3780847
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.026718974
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _xScaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -1.9296036
+      outSlope: -1.9296036
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0
+      outWeight: 0.1371107
+    - serializedVersion: 3
+      time: 0.7
+      value: 0.8
+      inSlope: -0.005177773
+      outSlope: -0.005177773
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.44407362
+      outWeight: 0.46803436
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.025795
+      outSlope: 1.025795
+      tangentMode: 0
+      weightedMode: 3
+      inWeight: 0.21684611
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _spriteRenderer: {fileID: 3526748089304086589}
 --- !u!114 &6032046274449053834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,15 +272,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyHP: 0
-  _enemyDamage: 1
---- !u!114 &3526748089351439802 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8092451546302007458, guid: 26ef079f399a3434383ba565d10e3324, type: 3}
-  m_PrefabInstance: {fileID: 4665640694234271000}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3526748089351439800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52e4a326979ab1446b1fbf2a50da7bce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _enemyDamage: 0
