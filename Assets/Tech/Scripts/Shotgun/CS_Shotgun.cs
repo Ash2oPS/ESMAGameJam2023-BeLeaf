@@ -63,7 +63,7 @@ public class CS_Shotgun : MonoBehaviour
     {
         Vector3 dir = (_mouseManager.WorldPosition - _playerController.transform.position);
         _currentDirection = new Vector2(dir.x, dir.y).normalized;
-        Debug.Log(_mouseManager.WorldPosition);
+        //Debug.Log(_mouseManager.WorldPosition);
     }
 
     private void PivotRotation()
