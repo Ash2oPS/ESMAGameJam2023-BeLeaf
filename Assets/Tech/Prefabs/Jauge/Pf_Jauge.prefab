@@ -416,7 +416,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: MEURTRES
+  m_text: VICTIMES
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f59a13e6792627341974ae94e5470228, type: 2}
   m_sharedMaterial: {fileID: -6877462913865542688, guid: f59a13e6792627341974ae94e5470228, type: 2}

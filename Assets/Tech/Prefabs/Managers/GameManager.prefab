@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1743234379660208230}
   - component: {fileID: 1743234379660208231}
   - component: {fileID: 1305335455}
+  - component: {fileID: 1093766399}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -60,11 +61,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c6fc944f38ccd8498e9ec591184e6ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnDelay: 1
+  _spawnDelay: 0.6
+  _regainedHP: 0.4
+  _spawnDelayCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -1.0000002
+      outSlope: -1.0000002
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.1
+      value: 0.9
+      inSlope: -1.0000002
+      outSlope: -9.999998
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.11
+      value: 0.8
+      inSlope: -9.999998
+      outSlope: -0.8764045
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.02
+      inSlope: -0.8764045
+      outSlope: -0.8764045
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _gameManager: {fileID: 1743234379660208231}
   _weakEnemyPrefab: {fileID: 236708448, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
   _mediumEnemyPrefab: {fileID: 3532949544446011141, guid: 9dd5c5c57e083d141be1f769fb8d519b, type: 3}
   _strongEnemyPrefab: {fileID: 2029825619546503372, guid: 039be53010f4d7e40bcb9e11770fefed, type: 3}
+  _maxEnemyNumber: 140
 --- !u!114 &1743234379660208230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,7 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347b001b4afff8f4f8d6bf2d0dae102d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _numberOfMurdersToStartPhase2: 10
+  _numberOfMurdersToStartPhase2: 20
   _camManager: {fileID: 1743234379660208230}
   _postProcessChanges: {fileID: 0}
   _postBlackNWhiteProcessChanges: {fileID: 0}
@@ -430,3 +475,16 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1093766399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743234379660208226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae275dc4adfbeb944ab751947a6f63b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _saveEntries: []
