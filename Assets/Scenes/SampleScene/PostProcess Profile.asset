@@ -20,14 +20,39 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: -16.7
   colorFilter:
-    m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_OverrideState: 1
+    m_Value: {r: 1, g: 0.6650944, b: 0.6650944, a: 1}
   hueShift:
     m_OverrideState: 0
     m_Value: 0
   saturation:
     m_OverrideState: 1
     m_Value: 100
+--- !u!114 &-5140739610047687202
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29fa0085f50d5e54f8144f766051a691, type: 3}
+  m_Name: FilmGrain
+  m_EditorClassIdentifier: 
+  active: 1
+  type:
+    m_OverrideState: 1
+    m_Value: 10
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.5
+  response:
+    m_OverrideState: 0
+    m_Value: 0.8
+  texture:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: b330a08325d6c3d40813866049c79f7e, type: 3}
 --- !u!114 &-907797064699092945
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -57,6 +82,7 @@ MonoBehaviour:
   m_Name: PostProcess Profile
   m_EditorClassIdentifier: 
   components:
+  - {fileID: -5140739610047687202}
   - {fileID: -5486402960141569523}
   - {fileID: -907797064699092945}
   - {fileID: 4961950631823571630}
