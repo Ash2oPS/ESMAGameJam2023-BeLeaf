@@ -12,6 +12,8 @@ public class CS_GameManager : MonoBehaviour
     [Header("---References---")]
     [SerializeField] private CS_CamManager _camManager;
 
+    [SerializeField] private CS_Transition _transition;
+
     [SerializeField] private CS_PostProcessChanges _postProcessChanges;
     [SerializeField] private CS_PostProcessChanges _postBlackNWhiteProcessChanges;
     [SerializeField] private CS_SoundManager _soundManager;
@@ -32,7 +34,15 @@ public class CS_GameManager : MonoBehaviour
     public void TriggerEndGame()
     {
         Debug.Log("Fin du jeu lancée");
-        Time.timeScale = 0;
+        if (_numberOfMurders == 0)
+        {
+            _transition.StartTransitionVictoire();
+        }
+
+        else
+        {
+            _transition.StartTransitionDefaite();
+        }
     }
 
     public void TriggerPartTwo()
