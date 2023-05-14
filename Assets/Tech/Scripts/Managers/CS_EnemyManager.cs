@@ -48,31 +48,17 @@ public class CS_EnemyManager : MonoBehaviour
     {
         if (_currentEnemyNumber >= _maxEnemyNumber) return;
 
-        bool isVerticallyLocked = Random.Range(0, 2) == 1;
+
 
         float xPos, yPos;
 
-        if (isVerticallyLocked)
-        {
-            xPos = Random.Range(-10f, 10f);
-            yPos = Random.Range(0, 2) == 1 ? 8f : -8f;
-        }
-        else
-        {
-            xPos = Random.Range(0, 2) == 1 ? 10f : -10f;
-            yPos = Random.Range(-8f, 8f);
-        }
 
         CS_EnemyController enemyToSpawn = _weakEnemyPrefab;
 
-        float playerX = _playerController.transform.position.x;
-        float playerY = _playerController.transform.position.y;
 
-        if (playerX + xPos < -7) xPos += 10f;
-        else if (playerX + xPos > 25) xPos += -10f;
 
-        if (playerY + yPos < -4) yPos += 8f;
-        else if (playerY + yPos > 14) yPos += -8f;
+        xPos = Random.Range(-6f, 24f);
+        yPos = Random.Range(-3f, 13f);
 
         switch (typeOfEnemy)
         {

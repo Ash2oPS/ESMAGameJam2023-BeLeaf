@@ -37,11 +37,13 @@ public class CS_GameManager : MonoBehaviour
         if (_numberOfMurders == 0)
         {
             _transition.StartTransitionVictoire();
+            StartCoroutine(QuitGameCoroutine());
         }
 
         else
         {
             _transition.StartTransitionDefaite();
+            StartCoroutine(QuitGameCoroutine());
         }
     }
 
@@ -61,5 +63,11 @@ public class CS_GameManager : MonoBehaviour
         _uIMurders.UpdateUI(_numberOfMurders);
 
         if (_numberOfMurders == _numberOfMurdersToStartPhase2) TriggerPartTwo();
+    }
+
+    IEnumerator QuitGameCoroutine()
+    {
+        yield return new WaitForSeconds(5);
+        Application.Quit();
     }
 }
