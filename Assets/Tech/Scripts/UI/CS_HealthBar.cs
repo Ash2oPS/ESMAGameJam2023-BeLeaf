@@ -8,9 +8,9 @@ public class CS_HealthBar : MonoBehaviour
 {
     [Header("---References---")]
     [SerializeField] private Slider _slider;
-    
-    //private 
-    
+
+    //private
+
     //getters
     public Slider Slider => _slider;
 
@@ -19,10 +19,9 @@ public class CS_HealthBar : MonoBehaviour
         _slider.maxValue = health;
         _slider.value = health;
     }
-    
+
     public void SetJauge(float _health)
     {
         _slider.value = _health;
     }
-    
 }

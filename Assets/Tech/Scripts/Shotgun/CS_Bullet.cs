@@ -75,7 +75,9 @@ public class CS_Bullet : MonoBehaviour
     {
         if (!other.TryGetComponent<CS_EnemyController>(out CS_EnemyController enemy)) return;
 
-        enemy.Explode();
+        float angle = Vector2.SignedAngle(_direction, Vector2.right);
+
+        enemy.Explode(_direction);
 
         Disable();
     }
