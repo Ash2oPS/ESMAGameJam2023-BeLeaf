@@ -13,6 +13,7 @@ public class CS_DismemberedObject : MonoBehaviour
     [SerializeField] private AnimationCurve _velocityCurve;
 
     [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Transform _spriteTrans;
 
     private Vector3 _basePos;
 
@@ -44,14 +45,14 @@ public class CS_DismemberedObject : MonoBehaviour
             factor = timer / _projectionDuration;
             scaledFactor = _velocityCurve.Evaluate(factor);
 
-            _spriteRenderer.transform.localPosition = new Vector2(0f, scaledFactor * _projectionHeight);
+            _spriteTrans.localPosition = new Vector2(0f, scaledFactor * _projectionHeight);
             transform.position = _basePos + new Vector3(_direction.x, _direction.y, 0f) * scaledFactor * _speed;
 
             yield return new WaitForEndOfFrame();
             timer = Mathf.Clamp(timer + Time.deltaTime, 0f, _lifeTime);
         }
 
-        _spriteRenderer.transform.localPosition = new Vector2(0f, 1f * _projectionHeight);
+        _spriteTrans.localPosition = new Vector2(0f, 1f * _projectionHeight);
         transform.position = _basePos + new Vector3(_direction.x, _direction.y, 0f) * 1f * _speed;
 
         while (timer < _lifeTime)
