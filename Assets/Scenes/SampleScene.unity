@@ -6773,6 +6773,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6881967538978589455, guid: 93f78d994ae3f6a4b85b9fceeb13cc05, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7209469915687093468, guid: 93f78d994ae3f6a4b85b9fceeb13cc05, type: 3}
       propertyPath: _playerSpriteRenderer
       value: 
