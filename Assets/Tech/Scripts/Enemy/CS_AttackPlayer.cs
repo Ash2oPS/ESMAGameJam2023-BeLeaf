@@ -23,8 +23,6 @@ public class CS_AttackPlayer : MonoBehaviour
 
     public void DamagePlayer()
     {
-        Debug.Log("J'attaque le player");
-
-        _playerStats.SetHP(Mathf.Clamp(_playerStats.PlayerHP - _enemyStats.EnemyDamage, 0f, 1000f));
+        _playerStats.SetHP(Mathf.Clamp(_playerStats.PlayerHP - _enemyStats.EnemyDamage, 0f, 1000f), true);
     }
 }

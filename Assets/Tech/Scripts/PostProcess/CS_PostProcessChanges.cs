@@ -44,6 +44,6 @@ public class CS_PostProcessChanges : MonoBehaviour
             timer = Mathf.Clamp(timer + Time.unscaledDeltaTime, 0f, _transitionDuration);
         }
 
-        _postProcessVolume.weight = 1f;
+        _postProcessVolume.weight = _curve.Evaluate(1f);
     }
 }
