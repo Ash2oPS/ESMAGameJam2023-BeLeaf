@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,15 @@ public class CS_AutoSpriteSorting : MonoBehaviour
 {
     [Header("---References---")]
     [SerializeField] private SpriteRenderer[] _spriteRenderers;
+
+    private void Awake()
+    {
+        if (_spriteRenderers == null || _spriteRenderers.Length == 0)
+        {
+            _spriteRenderers = new SpriteRenderer[1];
+            _spriteRenderers[0] = GetComponent<SpriteRenderer>();
+        }
+    }
 
     private void Start()
     {

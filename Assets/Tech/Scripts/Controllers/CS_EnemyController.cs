@@ -17,7 +17,6 @@ public class CS_EnemyController : MonoBehaviour
     public void Explode()
     {
         _enemyMovement.StopBouncing();
-        
         Destroy(gameObject);
     }
 }
