@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 8092451546348991781, guid: 26ef079f399a3434383ba565d10e3324, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 18413f4066d088e488d7133625538133, type: 3}
+      objectReference: {fileID: 21300000, guid: 536bd886123bcdb498056e2898b57643, type: 3}
     m_RemovedComponents:
     - {fileID: 8092451546302007458, guid: 26ef079f399a3434383ba565d10e3324, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 26ef079f399a3434383ba565d10e3324, type: 3}
@@ -131,6 +131,8 @@ MonoBehaviour:
   _attackPlayer: {fileID: 236708452}
   _enemyMovement: {fileID: 3000717347187386832}
   _dismemberedObjectPrefab: {fileID: 7059430117156869313, guid: f27588ba09aded640b59f2897f962f7f, type: 3}
+  _demembrementVFX: {fileID: 8786694425132027091, guid: d9c48ff14b10d61428923c0a8de5fee0, type: 3}
+  _sangVFX: {fileID: 3579263375108428768, guid: fe22c56f0996a53469852651a0957987, type: 3}
   _dismemberedSprites:
   - {fileID: 21300000, guid: 0a6c9c3316b5469409d3c954573d4150, type: 3}
   - {fileID: 21300000, guid: 703cb5dcdbc49014b91a2145cb0e1a61, type: 3}
@@ -281,4 +283,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyHP: 0
-  _enemyDamage: 0
+  _enemyDamage: 2

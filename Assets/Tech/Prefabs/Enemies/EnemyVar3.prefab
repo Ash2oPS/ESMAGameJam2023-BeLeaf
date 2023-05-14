@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 236708448, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
+      propertyPath: _demembrementVFX
+      value: 
+      objectReference: {fileID: 4139965240166225741, guid: 0f95ddf7fcb12af489a7332c7ec5d835, type: 3}
     - target: {fileID: 3000717347187386832, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
       propertyPath: _bounceHeight
       value: 1
@@ -26,18 +30,18 @@ PrefabInstance:
     - target: {fileID: 3526748089304086589, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: eb241cc29c5918a4a8d4b959efbf3388, type: 3}
+      objectReference: {fileID: 21300000, guid: 24b499bb558950c49a7ff5d7c1e2f2f7, type: 3}
     - target: {fileID: 3526748089351439797, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3526748089351439797, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.574
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3526748089351439797, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3526748089351439797, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -81,7 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6032046274449053834, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
       propertyPath: _enemyDamage
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9179746701842865345, guid: 2b1757ad9a772034db15675e7365c05b, type: 3}
       propertyPath: m_IsTrigger

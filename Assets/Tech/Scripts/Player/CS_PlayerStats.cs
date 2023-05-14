@@ -41,7 +41,7 @@ public class CS_PlayerStats : MonoBehaviour
             _controller.SetInvincible();
         }
 
-        _playerHP = _newHP;
+        _playerHP = Mathf.Clamp(_newHP, 0f, 10f);
         _healthBar.SetJauge(_newHP);
 
         if (_playerHP == 0)

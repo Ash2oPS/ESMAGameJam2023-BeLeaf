@@ -7,6 +7,10 @@ public class CS_EnemyManager : MonoBehaviour
     [Header("---Parameters---")]
     [SerializeField] private float _spawnDelay;
 
+    [SerializeField] private float _regainedHP;
+
+    [SerializeField] private AnimationCurve _spawnDelayCurve;
+
     [SerializeField] private CS_GameManager _gameManager;
 
     [Header("---Prefabs---")]
@@ -15,10 +19,15 @@ public class CS_EnemyManager : MonoBehaviour
     [SerializeField] private CS_EnemyController _mediumEnemyPrefab, _strongEnemyPrefab;
 
     private CS_PlayerController _playerController;
+    private CS_PlayerStats _playerStats;
+
+    [SerializeField] private int _maxEnemyNumber;
+    private int _currentEnemyNumber;
 
     private void Awake()
     {
         _playerController = FindObjectOfType<CS_PlayerController>();
+        _playerStats = FindObjectOfType<CS_PlayerStats>();
     }
 
     private void Start()
@@ -30,13 +39,15 @@ public class CS_EnemyManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(_spawnDelay);
+            yield return new WaitForSeconds(Mathf.Clamp(_spawnDelayCurve.Evaluate((float)_gameManager.NumberOfMureders / 200), .02f, 1f) * _spawnDelay);
             SpawnEnemy(Random.Range(0, 4));
         }
     }
 
     private void SpawnEnemy(int typeOfEnemy)
     {
+        if (_currentEnemyNumber >= _maxEnemyNumber) return;
+
         bool isVerticallyLocked = Random.Range(0, 2) == 1;
 
         float xPos, yPos;
@@ -58,10 +69,10 @@ public class CS_EnemyManager : MonoBehaviour
         float playerY = _playerController.transform.position.y;
 
         if (playerX + xPos < -7) xPos += 10f;
-        if (playerX + xPos > 25) xPos += -10f;
+        else if (playerX + xPos > 25) xPos += -10f;
 
         if (playerY + yPos < -4) yPos += 8f;
-        if (playerY + yPos > 14) yPos += -8f;
+        else if (playerY + yPos > 14) yPos += -8f;
 
         switch (typeOfEnemy)
         {
@@ -80,6 +91,15 @@ public class CS_EnemyManager : MonoBehaviour
 
         CS_EnemyController spawnedEnemy = Instantiate(enemyToSpawn, new Vector3(xPos, yPos, 0f), Quaternion.identity);
 
-        spawnedEnemy.SetGameManager(_gameManager);
+        spawnedEnemy.SetGameManager(_gameManager, this);
+
+        _currentEnemyNumber++;
+    }
+
+    public void DecreaseNumberOfEnemies()
+    {
+        _currentEnemyNumber--;
+
+        _playerStats.SetHP(_playerStats.PlayerHP + _regainedHP * Mathf.Clamp(_spawnDelayCurve.Evaluate((float)_gameManager.NumberOfMureders / 200), .02f, 1f) * _spawnDelay);
     }
 }
