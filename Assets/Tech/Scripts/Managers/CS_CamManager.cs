@@ -14,11 +14,6 @@ public class CS_CamManager : MonoBehaviour
     private Coroutine _currentShakeCoroutine;
     private Vector3 _basePos;
 
-    private void Start()
-    {
-        _basePos = _cam.transform.position;
-    }
-
     public void ShotgunShake()
     {
         if (_currentShakeCoroutine != null) StopCoroutine(_currentShakeCoroutine);
@@ -37,13 +32,13 @@ public class CS_CamManager : MonoBehaviour
             _timer = Mathf.Clamp(_timer + Time.deltaTime, 0f, _shotgunShakeDuration);
             factor = _timer / _shotgunShakeDuration;
             float curved = 1 - _shotgunShakeCurve.Evaluate(factor);
-            _cam.transform.position = _basePos + new Vector3(dir.x * curved, dir.y * curved, 0f) * _shotgunShakeFactor;
+            _cam.transform.localPosition = new Vector3(dir.x * curved, dir.y * curved, -10f) * _shotgunShakeFactor;
 
             yield return new WaitForEndOfFrame();
         }
 
         Debug.Log("oui");
-        _cam.transform.position = _basePos;
+        _cam.transform.localPosition = new Vector3(0f, 0f, -10f);
         _currentShakeCoroutine = null;
     }
 
@@ -67,7 +62,7 @@ public class CS_CamManager : MonoBehaviour
             float x = Random.Range(-1f, 1f) * currentMagnitude;
             float y = Random.Range(-1f, 1f) * currentMagnitude;
 
-            _cam.transform.position = _basePos + new Vector3(x, y, 0f);
+            _cam.transform.localPosition = new Vector3(x, y, -10f);
 
             timer = Mathf.Clamp(timer + Time.unscaledDeltaTime, 0f, duration);
 
@@ -79,7 +74,7 @@ public class CS_CamManager : MonoBehaviour
             float x = Random.Range(-1f, 1f) * magnitude;
             float y = Random.Range(-1f, 1f) * magnitude;
 
-            _cam.transform.position = _basePos + new Vector3(x, y, 0f);
+            _cam.transform.localPosition = new Vector3(x, y, -10f);
 
             yield return new WaitForEndOfFrame();
         }

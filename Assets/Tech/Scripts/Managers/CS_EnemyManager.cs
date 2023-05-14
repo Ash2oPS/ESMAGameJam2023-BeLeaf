@@ -7,10 +7,19 @@ public class CS_EnemyManager : MonoBehaviour
     [Header("---Parameters---")]
     [SerializeField] private float _spawnDelay;
 
+    [SerializeField] private CS_GameManager _gameManager;
+
     [Header("---Prefabs---")]
     [SerializeField] private CS_EnemyController _weakEnemyPrefab;
 
     [SerializeField] private CS_EnemyController _mediumEnemyPrefab, _strongEnemyPrefab;
+
+    private CS_PlayerController _playerController;
+
+    private void Awake()
+    {
+        _playerController = FindObjectOfType<CS_PlayerController>();
+    }
 
     private void Start()
     {
@@ -45,6 +54,15 @@ public class CS_EnemyManager : MonoBehaviour
 
         CS_EnemyController enemyToSpawn = _weakEnemyPrefab;
 
+        float playerX = _playerController.transform.position.x;
+        float playerY = _playerController.transform.position.y;
+
+        if (playerX + xPos < -7) xPos += 10f;
+        if (playerX + xPos > 25) xPos += -10f;
+
+        if (playerY + yPos < -4) yPos += 8f;
+        if (playerY + yPos > 14) yPos += -8f;
+
         switch (typeOfEnemy)
         {
             case 0:
@@ -60,6 +78,8 @@ public class CS_EnemyManager : MonoBehaviour
                 break;
         }
 
-        Instantiate(enemyToSpawn, new Vector3(xPos, yPos, 0f), Quaternion.identity);
+        CS_EnemyController spawnedEnemy = Instantiate(enemyToSpawn, new Vector3(xPos, yPos, 0f), Quaternion.identity);
+
+        spawnedEnemy.SetGameManager(_gameManager);
     }
 }

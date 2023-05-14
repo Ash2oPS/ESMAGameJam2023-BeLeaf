@@ -34,4 +34,9 @@ public class CS_Movement : MonoBehaviour
 
         transform.position += new Vector3(_currentDirection.x, _currentDirection.y, 0f) * _movementSpeed * Time.deltaTime;
     }
+
+    public void SetMovementSpeed(float speed)
+    {
+        _movementSpeed = speed;
+    }
 }

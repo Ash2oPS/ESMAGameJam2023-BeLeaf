@@ -10,17 +10,21 @@ public class CS_PlayerStats : MonoBehaviour
 
     [Header("---Data---")]
     [SerializeField] private float _playerHP;
+
     [SerializeField] private float _coefficient;
-   
+
+    private CS_PlayerController _controller;
+
     //getters
     public float PlayerHP => _playerHP;
-    
+
     //private
     private CS_GameManager _gameManager;
 
     private void Awake()
     {
         _gameManager = FindObjectOfType<CS_GameManager>();
+        _controller = FindObjectOfType<CS_PlayerController>();
     }
 
     private void Update()
@@ -28,17 +32,24 @@ public class CS_PlayerStats : MonoBehaviour
         DecreaseHPOverTime();
     }
 
-    public void SetHP(float _newHP)
+    public void SetHP(float _newHP, bool isFromEnemy = false)
     {
+        if (isFromEnemy)
+        {
+            if (_controller.IsInvincible) return;
+
+            _controller.SetInvincible();
+        }
+
         _playerHP = _newHP;
         _healthBar.SetJauge(_newHP);
-        
+
         if (_playerHP == 0)
         {
             _gameManager.TriggerEndGame();
         }
     }
-    
+
     private void DecreaseHPOverTime()
     {
         SetHP(Mathf.Clamp(_playerHP - _coefficient * Time.deltaTime, 0f, 1000f));

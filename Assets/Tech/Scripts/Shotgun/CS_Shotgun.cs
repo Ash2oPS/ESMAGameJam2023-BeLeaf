@@ -65,6 +65,13 @@ public class CS_Shotgun : MonoBehaviour
         TimerTick();
     }
 
+    public void SetValues(float shootDelay, float spreadWidth, int numberOfSpawnedBullets)
+    {
+        _shootDelay = shootDelay;
+        _spreadRangeWidth = spreadWidth;
+        _numberOfSpawnedBullet = numberOfSpawnedBullets;
+    }
+
     #region Methods
 
     private void SetCurrentDirection()
