@@ -130,6 +130,15 @@ MonoBehaviour:
   _chasePlayer: {fileID: 236708447}
   _attackPlayer: {fileID: 236708452}
   _enemyMovement: {fileID: 3000717347187386832}
+  _dismemberedObjectPrefab: {fileID: 7059430117156869313, guid: f27588ba09aded640b59f2897f962f7f, type: 3}
+  _dismemberedSprites:
+  - {fileID: 21300000, guid: 0a6c9c3316b5469409d3c954573d4150, type: 3}
+  - {fileID: 21300000, guid: 703cb5dcdbc49014b91a2145cb0e1a61, type: 3}
+  - {fileID: 21300000, guid: b9e6997f0404b2f4aaa22f2e537be436, type: 3}
+  - {fileID: 21300000, guid: 2a5d6c3ea2490b841b19592a3e545fa7, type: 3}
+  - {fileID: 21300000, guid: 18413f4066d088e488d7133625538133, type: 3}
+  - {fileID: 21300000, guid: 57f45ca1e578e2f428cff415bd2cf702, type: 3}
+  - {fileID: 21300000, guid: bbbfe924dc367564493c97873c8d75fd, type: 3}
 --- !u!114 &236708452
 MonoBehaviour:
   m_ObjectHideFlags: 0
