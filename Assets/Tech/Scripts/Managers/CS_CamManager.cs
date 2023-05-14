@@ -32,10 +32,10 @@ public class CS_CamManager : MonoBehaviour
         float factor;
         Vector2 dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
 
-        while (_timer < _shakeDuration)
+        while (_timer < _shotgunShakeDuration)
         {
-            _timer = Mathf.Clamp(_timer + Time.deltaTime, 0f, _shakeDuration);
-            factor = _timer / _shakeDuration;
+            _timer = Mathf.Clamp(_timer + Time.deltaTime, 0f, _shotgunShakeDuration);
+            factor = _timer / _shotgunShakeDuration;
             float curved = 1 - _shotgunShakeCurve.Evaluate(factor);
             _cam.transform.position = _basePos + new Vector3(dir.x * curved, dir.y * curved, 0f) * _shotgunShakeFactor;
 
@@ -69,7 +69,7 @@ public class CS_CamManager : MonoBehaviour
 
             _cam.transform.position = _basePos + new Vector3(x, y, 0f);
 
-            timer = Mathf.Clamp(timer + Time.deltaTime, 0f, duration);
+            timer = Mathf.Clamp(timer + Time.unscaledDeltaTime, 0f, duration);
 
             yield return new WaitForEndOfFrame();
         }

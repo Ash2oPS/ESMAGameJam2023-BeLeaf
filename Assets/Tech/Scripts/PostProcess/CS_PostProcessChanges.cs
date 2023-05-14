@@ -41,7 +41,7 @@ public class CS_PostProcessChanges : MonoBehaviour
             _postProcessVolume.weight = _currentWeight;
 
             yield return new WaitForEndOfFrame();
-            timer = Mathf.Clamp(timer + Time.deltaTime, 0f, _transitionDuration);
+            timer = Mathf.Clamp(timer + Time.unscaledDeltaTime, 0f, _transitionDuration);
         }
 
         _postProcessVolume.weight = 1f;

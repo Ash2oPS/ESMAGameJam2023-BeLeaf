@@ -9,6 +9,8 @@ public class CS_GameManager : MonoBehaviour
     public bool PartTwoBegin = false;
     [SerializeField] private CS_CamManager _camManager;
     [SerializeField] private CS_PostProcessChanges _postProcessChanges;
+    [SerializeField] private CS_SoundManager _soundManager;
+    [SerializeField] private CS_TimeManager _timeManager;
 
     public void TriggerEndGame()
     {
@@ -31,5 +33,7 @@ public class CS_GameManager : MonoBehaviour
     {
         _camManager.StartGlobalShake();
         _postProcessChanges.StartChanges();
+        _soundManager.ChangeMusic();
+        _timeManager.StartTransition();
     }
 }

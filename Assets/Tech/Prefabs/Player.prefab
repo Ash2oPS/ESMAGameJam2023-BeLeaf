@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _shotgun: {fileID: 6749998687733043520}
-  _playerSpriteRenderer: {fileID: 0}
+  _playerSpriteRenderer: {fileID: 6881967538931234442}
 --- !u!1 &4249849833962391094
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,6 +464,11 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 26a40fbdeb0f7c143a46fd2475ec757f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26ef079f399a3434383ba565d10e3324, type: 3}
+--- !u!212 &6881967538931234442 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8092451546348991781, guid: 26ef079f399a3434383ba565d10e3324, type: 3}
+  m_PrefabInstance: {fileID: 3445113862078251951}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6881967538978589442 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8092451546302007469, guid: 26ef079f399a3434383ba565d10e3324, type: 3}

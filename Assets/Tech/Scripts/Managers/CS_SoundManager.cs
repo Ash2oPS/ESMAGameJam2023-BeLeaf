@@ -6,14 +6,13 @@ using UnityEngine.UI;
 
 public class CS_SoundManager : MonoBehaviour
 {
-
     private CS_GameManager _gameManager;
-    
+
     [SerializeField] private AudioSource _piste1, _piste2;
 
     private void Awake()
     {
-        _gameManager = FindObjectOfType<CS_GameManager>(); 
+        _gameManager = FindObjectOfType<CS_GameManager>();
     }
 
     public void PlaySound(AudioSource _pisteAudio)
@@ -21,18 +20,9 @@ public class CS_SoundManager : MonoBehaviour
         _pisteAudio.Play();
     }
 
-    private void Update()
+    public void ChangeMusic()
     {
-        if (!_gameManager.PartTwoBegin)
-        {
-            _piste2.enabled = false;
-            _piste1.enabled = true;
-        }
-
-        else
-        {
-            _piste1.enabled = false;
-            _piste2.enabled = true;
-        }
+        _piste1.enabled = false;
+        _piste2.enabled = true;
     }
 }
