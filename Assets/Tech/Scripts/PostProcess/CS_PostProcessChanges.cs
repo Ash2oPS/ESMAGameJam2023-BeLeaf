@@ -1,19 +1,18 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
-using UnityEngine.Serialization;
 
 public class CS_PostProcessChanges : MonoBehaviour
 {
-     [Header("---Data---")]
-    [SerializeField] private float _transitionSpeed;
-    [SerializeField] private float _currentWeight;
+    [Header("---Parameters---")]
+    [SerializeField] private float _transitionDuration;
 
-    
+    [SerializeField] private float _currentWeight;
+    [SerializeField] private AnimationCurve _curve;
+
     //privates
     private Volume _postProcessVolume;
+
     private CS_GameManager _gameManager;
 
     //getters
@@ -25,17 +24,26 @@ public class CS_PostProcessChanges : MonoBehaviour
         _gameManager = FindObjectOfType<CS_GameManager>();
     }
 
-    private void Update()
+    public void StartChanges()
     {
-        if (_gameManager.PartTwoBegin)
-        {
-            PostProcessChange();
-        }
+        StartCoroutine(PostProcessChange());
     }
 
-    public void PostProcessChange()
+    public IEnumerator PostProcessChange()
     {
-        _currentWeight = Mathf.Lerp(_currentWeight, 1.0f, _transitionSpeed * Time.deltaTime);
-        _postProcessVolume.weight = _currentWeight;
+        float timer = 0f;
+        float factor;
+
+        while (timer < _transitionDuration)
+        {
+            factor = timer / _transitionDuration;
+            _currentWeight = _curve.Evaluate(factor);
+            _postProcessVolume.weight = _currentWeight;
+
+            yield return new WaitForEndOfFrame();
+            timer = Mathf.Clamp(timer + Time.unscaledDeltaTime, 0f, _transitionDuration);
+        }
+
+        _postProcessVolume.weight = 1f;
     }
 }
