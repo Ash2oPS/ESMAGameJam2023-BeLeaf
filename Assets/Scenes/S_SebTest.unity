@@ -669,31 +669,83 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 191294886, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 485737771, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 549717850, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 716713364, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1631059178, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2118804679, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 27661957122429103, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
       propertyPath: _force
-      value: 150
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 27661957122429103, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
+      propertyPath: _eplosionDuration
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 27661957122429103, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
+      propertyPath: _curve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 27661957122429103, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
+      propertyPath: _curve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 27661957122429103, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
+      propertyPath: _curve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 27661957122429103, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
+      propertyPath: _curve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 27661957122429103, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
+      propertyPath: _curve.m_Curve.Array.data[0].inSlope
+      value: 0.11449182
+      objectReference: {fileID: 0}
+    - target: {fileID: 27661957122429103, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
+      propertyPath: _curve.m_Curve.Array.data[1].inSlope
+      value: -3.0338964
+      objectReference: {fileID: 0}
+    - target: {fileID: 27661957122429103, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
+      propertyPath: _curve.m_Curve.Array.data[0].outSlope
+      value: 0.11449182
+      objectReference: {fileID: 0}
+    - target: {fileID: 27661957122429103, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
+      propertyPath: _curve.m_Curve.Array.data[1].inWeight
+      value: 0.029764473
+      objectReference: {fileID: 0}
+    - target: {fileID: 27661957122429103, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
+      propertyPath: _curve.m_Curve.Array.data[1].outSlope
+      value: -3.0338964
+      objectReference: {fileID: 0}
+    - target: {fileID: 27661957122429103, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
+      propertyPath: _curve.m_Curve.Array.data[0].outWeight
+      value: 0.1392818
+      objectReference: {fileID: 0}
+    - target: {fileID: 27661957122429103, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
+      propertyPath: _curve.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 27661957122429103, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
+      propertyPath: _curve.m_Curve.Array.data[1].tangentMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 557832830988347826, guid: fa78aa0e028cae74084edc9e1dfeeb7c, type: 3}
       propertyPath: m_RootOrder

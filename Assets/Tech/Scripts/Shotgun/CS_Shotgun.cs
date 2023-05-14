@@ -42,6 +42,7 @@ public class CS_Shotgun : MonoBehaviour
 
     private AudioSource _audioSource;
     private CS_SoundManager _soundManager;
+    private CS_CamManager _camManger;
     private float _timer;
     private bool _canShoot => _timer == 0f;
     private CS_MouseManager _mouseManager;
@@ -53,6 +54,7 @@ public class CS_Shotgun : MonoBehaviour
     {
         _mouseManager = FindObjectOfType<CS_MouseManager>();
         _soundManager = FindObjectOfType<CS_SoundManager>();
+        _camManger = FindObjectOfType<CS_CamManager>();
         _audioSource = GetComponent<AudioSource>();
     }
 
@@ -123,6 +125,7 @@ public class CS_Shotgun : MonoBehaviour
             SpawnBullet(i, newDir, speed, lifeTime, _bulletVelocityCurve);
         }
         Recoil();
+        _camManger.ShotgunShake();
         _soundManager.PlaySound(_audioSource);
     }
 
